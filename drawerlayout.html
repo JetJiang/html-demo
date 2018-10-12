@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				margin: 0;
+				padding: 0;
+			}
+			.main{
+				width: 100%;
+				position: relative;
+				left: 0;
+				transition: all 0.5s ease-in-out;
+				overflow-x: hidden;
+			}
+			.main-open{
+				left: -350px;
+			}
+			.header{
+				width: 100%;
+				position: absolute;
+				
+			}
+			.trigger{
+				width: 30px;
+				height: 30px;
+				float: right;
+				margin-right: 50px;
+				margin-top: 50px;
+				position: relative;
+			}
+			.banner{
+				width: 100%;
+				height: 600px;
+				background: url(img/about_us_title_bg.jpg);
+				background-size: cover;
+				background-attachment: fixed;
+			}
+			.slider{
+				position: fixed;
+				top: 0;
+				right: -350px;
+				width: 350px;
+				height: 100%;
+				background: #007EE5;
+				z-index: 1000;
+				transition: all 0.5s ease-in-out;
+			}
+			.open{
+				right: 0;
+			}
+			.trigger span{
+				display: block;
+				left: 0;
+				width: 100%;
+				height: 3px;
+				background: #FFFFFF;
+				position: absolute;
+				opacity: 1;
+				transform: rotate(0,0);
+				transition: all 0.1s ease-in-out;
+			}
+			.trigger span:nth-child(1){
+				top: 0px;
+			}
+			.trigger span:nth-child(2){
+				top: 6px;
+			}
+			.trigger span:nth-child(3){
+				top: 12px;
+			}
+			.trigger-open span:nth-child(1){
+				transform:rotate(45deg);
+				top: 6px;
+			}
+			.trigger-open span:nth-child(2){
+				width: 0;
+			}
+			.trigger-open span:nth-child(3){
+				transform:rotate(-45deg);
+				top: 6px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="header">
+				<div class="trigger">
+					<span ></span>
+					<span ></span>
+					<span ></span>
+				</div>
+			</div>
+			<div class="banner">
+				
+			</div>
+		</div>
+		<div class="slider">
+			
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".trigger").click(function(){
+				$(".slider").toggleClass("open");
+				$(".main").toggleClass("main-open");
+				$(this).toggleClass("trigger-open");
+			});
+		</script>
+	</body>
+</html>
